@@ -1,3 +1,5 @@
+from const import isprime
+
 class ProjectEuler:
 	@staticmethod
 	def Multiples_of_3_or_5():
@@ -22,3 +24,15 @@ class ProjectEuler:
 			n_1 = n_2
 			n_2 = x
 		return (sum)
+
+	@staticmethod
+	def Largest_prime_factor():
+		max_n = 600851475143
+		x = 2
+		while (True):
+			if ((max_n % x) == 0):
+				factor = int(max_n / x)
+				if (isprime(factor)):
+					return (factor)
+			x += 1
+		return (-1)

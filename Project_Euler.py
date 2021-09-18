@@ -51,3 +51,15 @@ class ProjectEuler:
 				x -= 1
 			y -= 1
 		return (max_n)
+
+	@staticmethod
+	def Smallest_multiple(init=1, end=20):
+		n = end
+		while True:
+			count = 0
+			for i in range(init, (end + 1)):
+				if ((n % i) == 0):
+					count += 1
+			if (count == 20):
+				return (n)
+			n += end

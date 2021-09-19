@@ -1,5 +1,6 @@
 from types import resolve_bases
 from const import isprime
+from math import sqrt
 
 class ProjectEuler:
 	@staticmethod
@@ -63,3 +64,24 @@ class ProjectEuler:
 			if (count == 20):
 				return (n)
 			n += end
+
+	@staticmethod
+	def Sum_square_difference(x=100, y=100):
+		sum1 = 0
+		sum2 = 0
+		for i in range(1, (x + 1)):
+			sum1 += i**2
+		for j in range(1, (y + 1)):
+			sum2 += j
+		return (sum2**2 - sum1)
+
+	@staticmethod
+	def P_10001st_prime(nth=10001):
+		i = 1
+		n = 3
+		while True:
+			if (isprime(n)):
+				i += 1
+			if (i == nth):
+				return (n)
+			n += 2

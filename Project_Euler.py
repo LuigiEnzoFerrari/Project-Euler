@@ -85,3 +85,22 @@ class ProjectEuler:
 			if (i == nth):
 				return (n)
 			n += 2
+
+	@staticmethod
+	def Largest_product_in_a_series(n:str):
+		n = ''.join(n.split())
+		start = 0
+		end = 13
+		n_len = len(n) - 12
+		products = 1
+		product = 1
+		while (start < n_len):
+			s = n[start:end]
+			for x in s:
+				products *= int(x)
+			if (products > product):
+				product = products
+			products = 1
+			start += 1
+			end += 1
+		return (product)

@@ -104,3 +104,20 @@ class ProjectEuler:
 			start += 1
 			end += 1
 		return (product)
+
+	@staticmethod
+	def Special_Pythagorean_triplet(n_max:int):
+
+		a =  1
+		b =  2
+		c = 0
+		while True:
+			c = sqrt(a**2 + b**2)
+			thesum = a + b + c
+			if thesum == n_max:
+				break
+			if thesum > n_max or c <= b:
+				a += 1
+				b = a
+			b += 1
+		return int(a * b * c)
